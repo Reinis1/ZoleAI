@@ -2,14 +2,15 @@
 # ZoleAI
 ## Version 1.0.0 - Published 2024 Apr 7
 ## Overview
-The Zole AI Model is a neural network-based artificial intelligence designed to play the Latvian traditional card game's Zole game mode "Table". It is trained using reinforcement learning techniques for 1 million games to make strategic decisions during gameplay. This model serves as an autonomous player capable of competing against human players or other AI opponents. \n
+  Zole AI Model is a neural network-based artificial intelligence designed to play the Latvian traditional card game's Zole game mode "Table". It is trained using reinforcement learning techniques for 1 million games to make strategic decisions during gameplay. This model serves as an autonomous player capable of competing against human players or other AI opponents.
 
-## Features
+### Features
 - **Gameplay Simulation:** The AI model simulates Zole gameplay by predicting the best moves based on the current game state and historical data. The model has all the same information as a human player would and no more.
 - **Customizable Difficulty:** The AI's difficulty level can be adjusted to provide varying levels of challenge to players.
 - **Online Demo:** An [online sandbox demo](#online-demo) allows users to interact with the AI model through a user-friendly interface, experiencing its gameplay capabilities firsthand.
+- **Model .onnx files:** All of the model files are available for download and can be implemented by following the official [unity ml-agents documentation](https://github.com/Unity-Technologies/ml-agents/blob/develop/docs/Getting-Started.md).
 
-## How It Works
+### How It Works
 The Zole AI Model utilizes a deep neural network architecture to learn optimal gameplay strategies. Here's an overview of its functioning:
 1. **Input Processing:** The current game state, including the player's hand, cards on the table, and game rules, is processed as input to the neural network.
 2. **Neural Network Inference:** The processed input is fed into the neural network, which outputs a probability distribution over possible actions the AI can take.
@@ -21,10 +22,14 @@ The Zole AI Model comes with an [online demo](https://unsealable.itch.io/zole) w
 
 ![image](https://github.com/Reinis1/ZoleAI/assets/112851463/560c27e1-562f-4df6-a920-55d5e0ab59a2)
 
-The demo provides the following functionalities:
-- Select any of the 5 trained models. Each with a different ammount of steps trained.
+The [demo](https://unsealable.itch.io/zole) provides the following functionalities:
+- Select any of the 5 trained models. Each with a different ammount of steps trained indicated by the number and letter combination, where k - thousands and M - millions of steps.
 - See all player's and/or table cards.
-- Play an illegal card (User only).
+- Play an illegal card (user only).
 - See an evaluation score the selected AI model assigns to each card. 
-- Request the AI to evaluate user's gamplay by assigning PSAE score to each action.
+- Request the AI to evaluate user's gamplay by assigning [PSAE](#psae-score) score to each action.
 - Controll how quickly an AI plays a card by adjusting the simulation speed.
+
+#### PSAE score
+  Probabilistic Strategic Alignment Evaluation score (PSAE) quantifies the strategic congruence between user decision-making and the AI's strategic objectives. It uses the root of the difference between the AI's evaluations and the actual human actions, thereby providing a measure of the alignment's magnitude in probabilistic terms. This metric serves to assess the degree to which human players' actions adhere to the strategic intents perceived by the AI.
+
